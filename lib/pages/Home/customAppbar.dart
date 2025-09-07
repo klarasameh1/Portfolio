@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/pages/Home/homePage.dart';
 import 'package:my_portfolio/widgets/bordered_flat_button.dart';
+
+import '../About/aboutPage.dart';
 
 class CustomAppbar extends StatelessWidget {
 
@@ -23,10 +26,12 @@ class CustomAppbar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset('assets/images/Klogo.png'),
+            TextButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => HomePage())),
+            child: Image.asset('assets/images/Klogo.png')
+            ),
             Row(
               children: [
-                _appBarButton('About me', (){}),
+                _appBarButton('About me', () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => AboutPage()))),
                 _appBarButton('Skills', (){}),
                 _appBarButton('Projects', (){}),
                 BorderedFlatButton(title: "Contact Me", onTap: (){}, width: 140, height: 40),

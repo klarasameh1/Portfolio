@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/widgets/bordered_flat_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutMeContent extends StatelessWidget {
   Widget _contactIcon(IconData iconData, VoidCallback onTap){
@@ -45,14 +46,20 @@ class AboutMeContent extends StatelessWidget {
         SizedBox(height: 30,),
         Row(
           children: [
-            _contactIcon(FontAwesomeIcons.at, (){}),
-            _contactIcon(FontAwesomeIcons.linkedinIn, (){}),
-            _contactIcon(FontAwesomeIcons.github, (){}),
+            _contactIcon(FontAwesomeIcons.envelope, (){ _launchURL("mailto:klarasameh39@gmail.com");}),
+            _contactIcon(FontAwesomeIcons.linkedinIn, (){ _launchURL("https://www.linkedin.com/in/klara-sameh");}),
+            _contactIcon(FontAwesomeIcons.github, (){ _launchURL("https://github.com/klarasameh1");}),
           ],
         ),
         SizedBox(height: 15,),
         BorderedFlatButton(title: "Download Cv", onTap: (){}, width: 120, height: 40)
       ],
     );
+  }
+}
+Future<void> _launchURL(String url) async {
+  final Uri uri = Uri.parse(url);
+  if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+    throw 'Could not launch $url';
   }
 }

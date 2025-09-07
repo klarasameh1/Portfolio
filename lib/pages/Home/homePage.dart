@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/pages/Home/customAppbar.dart';
-
 import 'about_me_content.dart';
 
 class HomePage extends StatefulWidget {
@@ -39,7 +38,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               AboutMeContent(),
-              Image.asset('assets/images/me.png' , width: 600, height: 600,)
+              Image.asset('assets/images/me.png' , width: 700, height: 500,)
             ],
           ),
         )
