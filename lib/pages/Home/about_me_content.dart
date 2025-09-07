@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/widgets/bordered_flat_button.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AboutMeContent extends StatelessWidget {
+  Widget _contactIcon(IconData iconData, VoidCallback onTap){
+    return IconButton(
+        onPressed: onTap,
+        icon: Icon(iconData , color: Colors.white,)
+    );
+  }
   const AboutMeContent({super.key});
 
   @override
@@ -35,14 +43,15 @@ class AboutMeContent extends StatelessWidget {
           ),
         ),
         SizedBox(height: 30,),
-        Text(
-          'Find Me On ',
-          style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 16
-          ),
+        Row(
+          children: [
+            _contactIcon(FontAwesomeIcons.at, (){}),
+            _contactIcon(FontAwesomeIcons.linkedinIn, (){}),
+            _contactIcon(FontAwesomeIcons.github, (){}),
+          ],
         ),
+        SizedBox(height: 15,),
+        BorderedFlatButton(title: "Download Cv", onTap: (){}, width: 120, height: 40)
       ],
     );
   }

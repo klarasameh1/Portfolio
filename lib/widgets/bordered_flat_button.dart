@@ -23,12 +23,15 @@ class BorderedFlatButton extends StatelessWidget {
           onPressed: onTap,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.white,
+          padding: EdgeInsets.all(10),
         ),
           child: Text(
-              title,
+            title,
+            textAlign: TextAlign.center,
             style: TextStyle(
+
               color: Colors.black,
-              fontWeight: FontWeight.bold
+              fontWeight: FontWeight.bold,
             ),
           ),
       ),

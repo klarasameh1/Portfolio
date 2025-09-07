@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         backgroundColor: Colors.transparent,
         appBar: PreferredSize(
             preferredSize: Size(screenSize.width , 70),
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               AboutMeContent(),
-              Image.asset('assets/images/me.png')
+              Image.asset('assets/images/me.png' , width: 600, height: 600,)
             ],
           ),
         )
