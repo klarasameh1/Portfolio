@@ -6,66 +6,66 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
+            Colors.black87,
             Colors.black,
-            Colors.black87
           ],
         ),
       ),
-      child: Scaffold(
-        extendBodyBehindAppBar: true,
-        backgroundColor: Colors.transparent,
-        appBar: PreferredSize(
-          preferredSize: Size(screenSize.width , 70),
-          child: CustomAppbar() ,
-        ),
-          body:
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10 , vertical: 40),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 400,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 1
-                      )
-                    ) ,
-                    child: Center(
-                      child: Text(
-                        "About Me",
-                        style: TextStyle(
-                          color:  Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-
-                        ),
-                      ),
+      child: Center(
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 300,
+                height: 80,
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  border: Border.all(
+                    color: Colors.white70, // softer border
+                    width: 1,
+                  ),
+                ),
+                child: const Center(
+                  child: Text(
+                    "About Me",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28,
                     ),
-                  )
-                ],
+                  ),
+                ),
               ),
-            ),
-          )
+
+              const SizedBox(height: 40),
+
+
+               Text(
+                "I’m Klara, a passionate and driven Flutter developer with hands-on "
+                    "experience building mobile apps from scratch. I enjoy turning ideas into "
+                    "interactive, user-friendly applications and continuously exploring new ways "
+                    "to improve my skills.\n\n"
+                    "I’ve worked on projects ranging from personal portfolios to task management apps, "
+                    "where I practiced state management using Provider, responsive layouts, and integrating "
+                    "various Flutter widgets effectively. I’m also familiar with frontend UI/UX design principles.\n\n"
+                    "My goal is to contribute to projects that make a real difference while continuously "
+                    "improving as a Flutter developer.",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  height: 1.6,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
       ),
     );
   }
 }
-
-// "I’m Klara, a passionate and driven Flutter developer with hands-on "
-// "experience building mobile apps from scratch. I enjoy turning ideas into interactive,"
-// " user-friendly applications \nand continuously exploring new ways to improve my skills."
-// "I’ve worked on projects ranging from personal portfolios to task management apps , where "
-// "    I’ve practiced state management using Provider,\n responsive layouts, and integrating various Flutter w"
-// "idgets effectively. I’m also familiar with frontend UI/UX design principles"
-// "My goal is to contribute to projects that make a real difference \nwhile continuously improving as a Flutter developer.",

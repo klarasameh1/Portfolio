@@ -13,47 +13,59 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Colors.black, Colors.black87],
-        ),
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      appBar:  PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: CustomAppbar(),
       ),
-      child: Scaffold(
-        extendBodyBehindAppBar: true,
-        backgroundColor: Colors.transparent,
-        appBar: PreferredSize(
-          preferredSize: Size(screenSize.width, 70),
-          child: CustomAppbar(),
-        ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 80),
-            child:
-            // Home section
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      AboutMeContent(),
-                      Image.asset(
-                        'assets/images/me.png',
-                        width: 700,
-                        height: 500,
-                      ),
-                    ],
-                  ),
-                  AboutPage(),
-                ],
-              ),
-            ),
+
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Colors.black87,
+              Colors.black,
+            ],
           ),
+        ),
+        child: ListView(
+          padding: const EdgeInsets.all(20),
+          children: [
+            // Responsive layout
+            screenWidth > 800
+                ? Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: const [
+                Expanded(child: AboutMeContent()),
+                SizedBox(width: 40),
+                Image(
+                  image: AssetImage('assets/images/me.png'),
+                  width: 500,
+                  height: 400,
+                ),
+              ],
+            )
+                : Column(
+              children: const [
+                Image(
+                  image: AssetImage('assets/images/me.png'),
+                  width: 300,
+                  height: 300,
+                ),
+                SizedBox(height: 20),
+                AboutMeContent(),
+              ],
+            ),
+
+            const SizedBox(height: 80),
+
+            // ✅ This will now appear correctly
+            const AboutPage(),
+          ],
         ),
       ),
     );
