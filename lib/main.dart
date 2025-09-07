@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/pages/About/aboutPage.dart';
 import 'package:my_portfolio/pages/Home/homePage.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       title: 'Klara Sameh',
-      home: HomePage(),
+      home:HomePage(),
     );
   }
 }

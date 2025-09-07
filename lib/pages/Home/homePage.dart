@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/pages/About/aboutPage.dart';
 import 'package:my_portfolio/pages/Home/customAppbar.dart';
 import 'about_me_content.dart';
 
@@ -18,30 +19,42 @@ class _HomePageState extends State<HomePage> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            Colors.black,
-            Colors.black87
-          ],
+          colors: [Colors.black, Colors.black87],
         ),
       ),
       child: Scaffold(
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.transparent,
         appBar: PreferredSize(
-            preferredSize: Size(screenSize.width , 70),
-            child: CustomAppbar() ,
+          preferredSize: Size(screenSize.width, 70),
+          child: CustomAppbar(),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30 , vertical: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              AboutMeContent(),
-              Image.asset('assets/images/me.png' , width: 700, height: 500,)
-            ],
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 80),
+            child:
+            // Home section
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      AboutMeContent(),
+                      Image.asset(
+                        'assets/images/me.png',
+                        width: 700,
+                        height: 500,
+                      ),
+                    ],
+                  ),
+                  AboutPage(),
+                ],
+              ),
+            ),
           ),
-        )
+        ),
       ),
     );
   }
