@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/widgets/rectangleBox.dart';
-import '../Home/customAppbar.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});

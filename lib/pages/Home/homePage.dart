@@ -61,9 +61,8 @@ class _HomePageState extends State<HomePage> {
                 AboutMeContent(),
               ],
             ),
-            const SizedBox(height: 80),
 
-            // About me Section
+            const SizedBox(height: 80),
             const AboutPage(),
 
             const SizedBox(height: 80),
