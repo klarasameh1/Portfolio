@@ -4,7 +4,8 @@ import '../../../widgets/bordered_flat_button.dart';
 import '../appBarbutton.dart';
 
 class MobileDrawer extends StatelessWidget {
-  const MobileDrawer({super.key});
+  const MobileDrawer({super.key, required this.onNavItemTapped});
+  final Function(int) onNavItemTapped ;
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +28,16 @@ class MobileDrawer extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 50,),
-          AppBarButton(label: "About", onTap: (){}),
+          SizedBox(height: 30,),
+          AppBarButton(label: "Home", onTap: (){onNavItemTapped(0);}),
           SizedBox(height: 10,),
-          AppBarButton(label: "Skills", onTap: (){}),
+          AppBarButton(label: "About Me", onTap: (){onNavItemTapped(1);}),
           SizedBox(height: 10,),
-          AppBarButton(label: "Projects", onTap: (){}),
+          AppBarButton(label: "Skills", onTap: (){onNavItemTapped(2);}),
           SizedBox(height: 10,),
-          BorderedFlatButton(title: "Contact Me", onTap: (){}, width: 140, height: 40),
+          AppBarButton(label: "Projects", onTap: (){onNavItemTapped(3);}),
+          SizedBox(height: 10,),
+          BorderedFlatButton(title: "Contact Me", onTap: (){onNavItemTapped(4);}, width: 140, height: 40),
         ],
       ),
     );

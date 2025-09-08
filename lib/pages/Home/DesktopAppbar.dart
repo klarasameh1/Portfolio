@@ -3,7 +3,10 @@ import 'package:my_portfolio/pages/Home/appBarbutton.dart';
 import 'package:my_portfolio/pages/Home/homePage.dart';
 import 'package:my_portfolio/widgets/bordered_flat_button.dart';
 
-class CustomAppbar extends StatelessWidget {
+class DesktopAppBar extends StatelessWidget {
+  const DesktopAppBar({super.key, required this.onNavItemTapped});
+  final Function(int) onNavItemTapped ;
+
 
 
   @override
@@ -19,10 +22,11 @@ class CustomAppbar extends StatelessWidget {
             ),
             Row(
               children: [
-                AppBarButton(label: "About", onTap: (){}),
-                AppBarButton(label: "Skills", onTap: (){}),
-                AppBarButton(label: "Projects", onTap: (){}),
-                BorderedFlatButton(title: "Contact Me", onTap: (){}, width: 140, height: 40),
+                AppBarButton(label: "Home", onTap: (){onNavItemTapped(0);}),
+                AppBarButton(label: "About Me", onTap: (){onNavItemTapped(1);}),
+                AppBarButton(label: "Skills", onTap: (){onNavItemTapped(2);}),
+                AppBarButton(label: "Projects", onTap: (){onNavItemTapped(3);}),
+                BorderedFlatButton(title: "Contact Me", onTap: (){onNavItemTapped(4);}, width: 140, height: 40),
                 SizedBox(width: 5,)
               ],
             )
