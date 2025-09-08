@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
             end: Alignment.bottomRight,
             colors: [
               Colors.black87,
-              Colors.black,
+              Colors.black12,
             ],
           ),
         ),
@@ -60,10 +60,9 @@ class _HomePageState extends State<HomePage> {
                 AboutMeContent(),
               ],
             ),
-
             const SizedBox(height: 80),
 
-            // ✅ This will now appear correctly
+            // About me Section
             const AboutPage(),
           ],
         ),
