@@ -52,7 +52,7 @@ class AboutMeContent extends StatelessWidget {
           ],
         ),
         SizedBox(height: 15,),
-        BorderedFlatButton(title: "Download Cv", onTap: (){}, width: 120, height: 40)
+        BorderedFlatButton(title: "Download Cv", onTap: (){_launchURL("https://shorturl.at/4T1gA");}, width: 120, height: 40)
       ],
     );
   }

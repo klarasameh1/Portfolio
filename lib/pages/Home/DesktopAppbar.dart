@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/pages/Home/appBarbutton.dart';
 import 'package:my_portfolio/pages/Home/homePage.dart';
 import 'package:my_portfolio/widgets/bordered_flat_button.dart';
 
 class CustomAppbar extends StatelessWidget {
 
-  Widget _appBarButton(String label , VoidCallback onTap){
-    return TextButton(
-        onPressed: onTap,
-        child:Text(
-            label,
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        )
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +19,9 @@ class CustomAppbar extends StatelessWidget {
             ),
             Row(
               children: [
-                _appBarButton('About me', (){}),
-                _appBarButton('Skills', (){}),
-                _appBarButton('Projects', (){}),
+                AppBarButton(label: "About", onTap: (){}),
+                AppBarButton(label: "Skills", onTap: (){}),
+                AppBarButton(label: "Projects", onTap: (){}),
                 BorderedFlatButton(title: "Contact Me", onTap: (){}, width: 140, height: 40),
                 SizedBox(width: 5,)
               ],
