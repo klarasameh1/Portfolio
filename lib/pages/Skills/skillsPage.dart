@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/widgets/rectangleBox.dart';
 import '../Home/customAppbar.dart';
 
 class AboutPage extends StatelessWidget {
@@ -10,28 +11,7 @@ class AboutPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            width: 300,
-            height: 80,
-            decoration: BoxDecoration(
-              color: Colors.transparent,
-              border: Border.all(
-                color: Colors.white70, // softer border
-                width: 3,
-              ),
-            ),
-            child: const Center(
-              child: Text(
-                "About Me",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 28,
-                ),
-              ),
-            ),
-          ),
-
+          RectangleBox(content: "Skills"),
           const SizedBox(height: 40),
 
 
