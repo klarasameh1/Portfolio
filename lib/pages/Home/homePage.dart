@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/pages/About/aboutPage.dart';
 import 'package:my_portfolio/pages/Home/customAppbar.dart';
+import '../Skills/skillsPage.dart';
 import 'about_me_content.dart';
 
 class HomePage extends StatefulWidget {
@@ -64,6 +65,9 @@ class _HomePageState extends State<HomePage> {
 
             // About me Section
             const AboutPage(),
+
+            const SizedBox(height: 80),
+            const SkillsPage(),
           ],
         ),
       ),
