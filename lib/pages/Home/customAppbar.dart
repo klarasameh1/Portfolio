@@ -31,7 +31,7 @@ class CustomAppbar extends StatelessWidget {
             ),
             Row(
               children: [
-                _appBarButton('About me', () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => AboutPage()))),
+                _appBarButton('About me', (){}),
                 _appBarButton('Skills', (){}),
                 _appBarButton('Projects', (){}),
                 BorderedFlatButton(title: "Contact Me", onTap: (){}, width: 140, height: 40),
