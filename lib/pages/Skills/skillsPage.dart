@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/widgets/rectangleBox.dart';
 
 class SkillsPage extends StatelessWidget {
@@ -12,9 +13,7 @@ class SkillsPage extends StatelessWidget {
         children: [
           RectangleBox(content: "Skills"),
           const SizedBox(height: 40),
-          GridView.count(
-            crossAxisCount: 5,
-          ),
+          Icon(FontAwesomeIcons.flutter)
         ],
       ),
     );
