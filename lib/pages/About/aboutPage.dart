@@ -8,7 +8,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
 
             Center(child: RectangleBox(content: "About Me")),
@@ -18,41 +18,52 @@ class AboutPage extends StatelessWidget {
               "I’m a Flutter Developer",
               style: TextStyle(
                 fontSize: 50,
-                color: Colors.red[300],
+                color: Color(0xff681414),
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Text(
-              "Currently I'm student at my last years at FCAI-CU\n\n",
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.red[200],
+            RichText(
+              text: TextSpan(
+                style: const TextStyle(fontSize: 22, color: Colors.white),
+                children: [
+                  const TextSpan(text: "Currently, I’m a student at  "),
+                  TextSpan(
+                    text: "FCAI - CU",
+                    style: TextStyle(
+                      color: Color(0xff909090),
+                    ),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: 40,),
+            const SizedBox(height: 20),
 
-            Text(
+            // Experience
+            const Text(
+              textAlign: TextAlign.center,
               "I’ve worked on projects ranging from personal portfolios to task management apps, "
-                  "where I practiced state management using Provider, responsive layouts and "
+                  "\nwhere I practiced state management using Provider, responsive layouts, and "
                   "integrated various Flutter widgets effectively.",
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 22,
                 color: Colors.white,
+                height: 1.5,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
-            Text(
-              "I Hope to contribute to projects that make a real difference "
+            // Goal
+            const Text(
+              "My goal is to contribute to projects that make a real difference "
                   "while continuously improving as a Flutter developer.",
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 18,
                 color: Colors.white,
-
+                height: 1.5,
               ),
             ),
           ],
-        ),
+      ),
     );
   }
 }
