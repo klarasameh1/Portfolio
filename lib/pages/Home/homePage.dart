@@ -36,8 +36,9 @@ class _HomePageState extends State<HomePage> {
             )
       ),
       endDrawer: MobileDrawer(onNavItemTapped: (int navIndex){
-        scaffoldKey.currentState?.openEndDrawer();
-        scrollTo(navIndex);},
+        scaffoldKey.currentState?.closeEndDrawer();
+        scrollTo(navIndex);
+        },
       ),
 
       body: Container(
