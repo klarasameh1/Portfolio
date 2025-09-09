@@ -8,31 +8,57 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            RectangleBox(content: "About Me"),
+            Center(child: RectangleBox(content: "About Me")),
             const SizedBox(height: 40),
 
-             Text(
-              "I’m Klara, a passionate and driven Flutter developer with hands-on "
-                  "experience building mobile apps from scratch. I enjoy turning ideas into "
-                  "interactive, user-friendly applications and continuously exploring new ways "
-                  "to improve my skills.\n\n"
-                  "I’ve worked on projects ranging from personal portfolios to task management apps, "
-                  "where I practiced state management using Provider, responsive layouts, and integrating "
-                  "various Flutter widgets effectively. I’m also familiar with frontend UI/UX design principles.\n\n"
-                  "My goal is to contribute to projects that make a real difference while continuously "
-                  "improving as a Flutter developer.",
+            Text(
+              "I’m a Flutter Developer",
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                height: 1.6,
+                fontSize: 50,
+                color: Colors.red[300],
+                fontWeight: FontWeight.bold,
               ),
-              textAlign: TextAlign.start,
+            ),
+            Text(
+              "Currently I'm student at my last years at FCAI-CU\n\n",
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.red[200],
+              ),
+            ),
+            SizedBox(height: 40,),
+
+            Text(
+              "I’ve worked on projects ranging from personal portfolios to task management apps, "
+                  "where I practiced state management using Provider, responsive layouts and "
+                  "integrated various Flutter widgets effectively.",
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(height: 20),
+
+            Text(
+              "I Hope to contribute to projects that make a real difference "
+                  "while continuously improving as a Flutter developer.",
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+
+              ),
             ),
           ],
         ),
     );
   }
 }
+
+// Hi, I’m Klara, a Flutter developer passionate about turning ideas into smooth, engaging mobile experiences. I enjoy building apps from scratch and refining them into user-friendly solutions.
+//
+// I’ve developed projects ranging from personal portfolios to task management apps, practicing state management with Provider, responsive UI layouts, and Firebase integration. I also pay close attention to UI/UX principles to make applications both functional and beautiful.
+//
+// My goal is to grow as a developer by contributing to impactful projects while continuously learning and improving my craft.
