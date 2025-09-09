@@ -38,7 +38,7 @@ class AboutMeContent extends StatelessWidget {
         Text(
           'Flutter Developer',
           style: TextStyle(
-              color: Color(0xff681414),
+              color: Color(0xff909090),
               fontWeight: FontWeight.bold,
               fontSize: 30
           ),
