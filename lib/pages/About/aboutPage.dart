@@ -24,7 +24,7 @@ class AboutPage extends StatelessWidget {
             ),
             RichText(
               text: TextSpan(
-                style: const TextStyle(fontSize: 22, color: Colors.white),
+                style: const TextStyle(fontSize: 20, color: Colors.white),
                 children: [
                   const TextSpan(text: "Currently, I’m a student at  "),
                   TextSpan(
@@ -41,9 +41,9 @@ class AboutPage extends StatelessWidget {
             // Experience
             const Text(
               textAlign: TextAlign.center,
-              "I’ve worked on projects ranging from personal portfolios to task management apps, "
-                  "\nwhere I practiced state management using Provider, responsive layouts, and "
-                  "integrated various Flutter widgets effectively.",
+              "I’ve worked on projects ranging from personal portfolio to task management app and mini shopping app, "
+                  "\npracticing state management with Provider, I also pay close attention to UI/UX principles to make applications both functional and beautiful"
+                  'My goal is to grow as a developer by contributing to impactful projects while continuously learning and improving my craft.',
               style: TextStyle(
                 fontSize: 22,
                 color: Colors.white,
@@ -67,9 +67,3 @@ class AboutPage extends StatelessWidget {
     );
   }
 }
-
-// Hi, I’m Klara, a Flutter developer passionate about turning ideas into smooth, engaging mobile experiences. I enjoy building apps from scratch and refining them into user-friendly solutions.
-//
-// I’ve developed projects ranging from personal portfolios to task management apps, practicing state management with Provider, responsive UI layouts, and Firebase integration. I also pay close attention to UI/UX principles to make applications both functional and beautiful.
-//
-// My goal is to grow as a developer by contributing to impactful projects while continuously learning and improving my craft.
