@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(30),
           child: SingleChildScrollView(
             controller: scrollController,
             scrollDirection: Axis.vertical,
