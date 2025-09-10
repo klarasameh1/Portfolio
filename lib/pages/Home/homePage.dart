@@ -92,6 +92,9 @@ class _HomePageState extends State<HomePage> {
 
                 const SizedBox(height: 80),
                 SkillsPage(key: navbarKeys[2],),
+
+                const SizedBox(height: 80),
+                ProjectsPage(key: navbarKeys[3],),
               ],
             ),
           ),
