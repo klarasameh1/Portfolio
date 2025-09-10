@@ -14,7 +14,7 @@ class ProjectsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Section header
-            Center(child: RectangleBox(content: "About Me")),
+            Center(child: RectangleBox(content: "My Projects")),
             const SizedBox(height: 40),
           ],
         ),
