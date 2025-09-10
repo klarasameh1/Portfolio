@@ -3,6 +3,7 @@ import 'package:my_portfolio/pages/About/aboutPage.dart';
 import 'package:my_portfolio/pages/Home/DesktopAppbar.dart';
 import 'package:my_portfolio/pages/Home/mobile/mobileAppbar.dart';
 import 'package:my_portfolio/pages/Home/mobile/mobileDrawer.dart';
+import 'package:my_portfolio/pages/Projects/projectsPage.dart';
 import '../Skills/skillsPage.dart';
 import 'about_me_content.dart';
 
