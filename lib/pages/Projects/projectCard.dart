@@ -28,7 +28,7 @@ class _ProjectCardState extends State<ProjectCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 250,
+      width: 400,
       decoration: BoxDecoration(
         color: Colors.transparent,
         border: Border.all(color: Colors.white70),
@@ -43,7 +43,7 @@ class _ProjectCardState extends State<ProjectCard> {
             child: Image.asset(
               widget.imagePath,
               width: double.infinity,
-              height: 140,
+              height: 180,
               fit: BoxFit.cover,
             ),
           ),
