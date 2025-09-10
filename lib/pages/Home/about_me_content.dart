@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/widgets/bordered_flat_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -35,12 +36,22 @@ class AboutMeContent extends StatelessWidget {
             height: 1
           ),
         ),
-        Text(
-          'Flutter Developer',
-          style: TextStyle(
-              color: Color(0xff909090),
-              fontWeight: FontWeight.bold,
-              fontSize: 30
+        DefaultTextStyle(
+          style: const TextStyle(
+            color: Color(0xff909090),
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
+          child: AnimatedTextKit(
+            repeatForever: true, // keep looping
+            animatedTexts: [
+              TypewriterAnimatedText('Software Engineer',
+                  speed: const Duration(milliseconds: 100)),
+              TypewriterAnimatedText('Flutter Developer',
+                  speed: const Duration(milliseconds: 100)),
+              TypewriterAnimatedText('Lifelong Learner',
+                  speed: const Duration(milliseconds: 100)),
+            ],
           ),
         ),
         SizedBox(height: 30,),
