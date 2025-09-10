@@ -10,8 +10,8 @@ class ProjectsPage extends StatelessWidget {
       "title": "Task Manager",
       "description": "Manage daily tasks with state management.",
       "tech": "Flutter, Provider",
-      "image": "assets/projectsImages/shoppingApp.png",
-      "link": "https://github.com/klarasameh1/ShoppingApp-SprintsUp"
+      "image": "assets/projectsImages/TasksApp.png",
+      "link": "https://github.com/klarasameh1/TaskyApp"
     },
     {
       "title": "Mini Shop App",
