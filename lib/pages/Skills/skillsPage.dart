@@ -7,9 +7,10 @@ class SkillsPage extends StatelessWidget {
   final List<Map> skillItems = [
     {"logo": 'assets/skillsLogos/flutter.png', "title": "Flutter"},
     {"logo": 'assets/skillsLogos/dart.png', "title": "Dart"},
+    {"logo": 'assets/skillsLogos/dart.png', "title": "Provider"},
+    {"logo": 'assets/skillsLogos/cpp.png', "title": "C++"},
     {"logo": 'assets/skillsLogos/git.png', "title": "Git"},
     {"logo": 'assets/skillsLogos/github.png', "title": "GitHub"},
-    {"logo": 'assets/skillsLogos/cpp.png', "title": "C++"},
   ];
 
   final List<Map> skillItems2 = [
@@ -65,30 +66,30 @@ class SkillsPage extends StatelessWidget {
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 500),
             child: Wrap(
-              spacing: 10,
-              runSpacing: 10,
+              spacing: 30,
+              runSpacing: 15,
               children: [
                 for (var skill in skills)
                   Chip(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 12.0, horizontal: 16.0),
-                    backgroundColor: Colors.white10, // faint background
-                    side: const BorderSide(color: Colors.white70),
+                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                    backgroundColor: Colors.transparent,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(20),
+                      side: BorderSide(color: Colors.white70),
                     ),
                     label: Text(
                       skill["title"]!,
-                      style: const TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500 ),
                     ),
                     avatar: Image.asset(
                       skill["logo"]!,
-                      width: 24,
-                      height: 24,
+                      width: 32,
+                      height: 32,
                     ),
                   ),
               ],
-            ),
+            )
+
           ),
         ),
       ],
