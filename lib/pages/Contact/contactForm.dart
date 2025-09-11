@@ -12,20 +12,23 @@ class ContactForm extends StatelessWidget {
 
   ContactForm({super.key});
 
-  Future<void> _sendEmail() async {
+  Future<void> _sendEmail(String name, String email, String message) async {
     final Uri emailUri = Uri(
       scheme: 'mailto',
       path: 'klarasameh39@gmail.com',
       queryParameters: {
-        'subject': 'New message from Portfolio',
-        'body':
-        'Name: ${nameController.text}\nEmail: ${emailController.text}\n\nMessage: ${messageController.text}',
+        'subject': 'Message from Portfolio',
+        'body': 'Name: $name\nEmail: $email\n\nMessage:\n$message',
       },
     );
+
     if (await canLaunchUrl(emailUri)) {
       await launchUrl(emailUri);
+    } else {
+      throw 'Could not open email app.';
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
