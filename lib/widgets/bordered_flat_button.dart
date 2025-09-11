@@ -24,6 +24,7 @@ class BorderedFlatButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.white,
           padding: EdgeInsets.all(10),
+          foregroundColor: Color(0xff690B22) ,
         ),
           child: Text(
             title,
