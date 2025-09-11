@@ -1,18 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/widgets/bordered_flat_button.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portfolio/widgets/contacts_icons_row.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutMeContent extends StatelessWidget {
-  Widget _contactIcon(IconData iconData, VoidCallback onTap){
-    return IconButton(
-      hoverColor: Color(0xff690B22),
-      iconSize: 30,
-        onPressed: onTap,
-        icon: Icon(iconData , color: Colors.white,)
-    );
-  }
   const AboutMeContent({super.key});
 
   @override
@@ -57,13 +49,7 @@ class AboutMeContent extends StatelessWidget {
           ),
         ),
         SizedBox(height: 30,),
-        Row(
-          children: [
-            _contactIcon(FontAwesomeIcons.envelope, (){ _launchURL("mailto:klarasameh39@gmail.com");}),
-            _contactIcon(FontAwesomeIcons.linkedinIn, (){ _launchURL("https://www.linkedin.com/in/klara-sameh");}),
-            _contactIcon(FontAwesomeIcons.github, (){ _launchURL("https://github.com/klarasameh1");}),
-          ],
-        ),
+        ContactsIconsRow(alignment: MainAxisAlignment.start),
         SizedBox(height: 15,),
         BorderedFlatButton(title: "Download Cv", onTap: (){_launchURL("https://shorturl.at/4T1gA");}, width: 140, height: 40)
       ],

@@ -4,6 +4,7 @@ import 'package:my_portfolio/pages/Home/DesktopAppbar.dart';
 import 'package:my_portfolio/pages/Home/mobile/mobileAppbar.dart';
 import 'package:my_portfolio/pages/Home/mobile/mobileDrawer.dart';
 import 'package:my_portfolio/pages/Projects/projectsPage.dart';
+import '../Contact/contactPage.dart';
 import '../Skills/skillsPage.dart';
 import 'about_me_content.dart';
 
@@ -96,6 +97,9 @@ class _HomePageState extends State<HomePage> {
 
                 const SizedBox(height: 100),
                 ProjectsPage(key: navbarKeys[3],),
+
+                const SizedBox(height: 100),
+                ContactPage(key: navbarKeys[4],),
               ],
             ),
           ),
