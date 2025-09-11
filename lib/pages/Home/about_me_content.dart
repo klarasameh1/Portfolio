@@ -7,6 +7,8 @@ import 'package:url_launcher/url_launcher.dart';
 class AboutMeContent extends StatelessWidget {
   Widget _contactIcon(IconData iconData, VoidCallback onTap){
     return IconButton(
+      hoverColor: Color(0xff690B22),
+      iconSize: 30,
         onPressed: onTap,
         icon: Icon(iconData , color: Colors.white,)
     );
