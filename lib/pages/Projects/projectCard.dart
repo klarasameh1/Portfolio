@@ -74,15 +74,15 @@ class _ProjectCardState extends State<ProjectCard> {
                       children: [
                         Icon(
                           FontAwesomeIcons.github,
-                          color: _hovered ? Colors.blue : Colors.white,
+                          color: _hovered ? Color(0xff690B22) : Colors.white,
                           size: 20,
                         ),
                         const SizedBox(width: 8),
                         Text(
                           "View on GitHub",
                           style: TextStyle(
-                              color: _hovered ? Colors.blue : Colors.white,
-                              fontWeight: FontWeight.w500),
+                              color: _hovered ? Color(0xff690B22) : Colors.white,
+                              fontWeight: FontWeight.w700),
                         ),
                       ],
                     ),
