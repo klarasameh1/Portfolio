@@ -28,7 +28,7 @@ class _ProjectCardState extends State<ProjectCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
+      width: 480,
       decoration: BoxDecoration(
         color: Colors.transparent,
         border: Border.all(color: Colors.white70),
