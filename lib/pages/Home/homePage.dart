@@ -88,13 +88,13 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
 
-                const SizedBox(height: 80),
+                const SizedBox(height: 100),
                 AboutPage(key: navbarKeys[1],),
 
-                const SizedBox(height: 80),
+                const SizedBox(height: 100),
                 SkillsPage(key: navbarKeys[2],),
 
-                const SizedBox(height: 80),
+                const SizedBox(height: 100),
                 ProjectsPage(key: navbarKeys[3],),
               ],
             ),
