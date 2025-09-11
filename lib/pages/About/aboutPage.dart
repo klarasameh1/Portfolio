@@ -123,7 +123,8 @@ class AboutPage extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.redAccent[100],
+                fontWeight: FontWeight.bold,
+                color: Color(0xff690B22),
                 height: 1.5,
               ),
             ),
