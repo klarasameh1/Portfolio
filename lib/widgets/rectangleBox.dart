@@ -11,13 +11,19 @@ class RectangleBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: 250,
       height: 80,
       decoration: BoxDecoration(
         color: Colors.transparent,
-        border: Border.all(
-          color: Colors.white70, // softer border
-          width: 3,
+        border: Border(
+          right: BorderSide(
+              color: Colors.white70, // softer border
+              width: 3,
+          ),
+          left: BorderSide(
+            color: Colors.white70, // softer border
+            width: 3,
+          ),
         ),
       ),
       child:  Center(
