@@ -20,7 +20,7 @@ class AboutPage extends StatelessWidget {
             // Typing effect for main title
             DefaultTextStyle(
               style: const TextStyle(
-                fontSize: 50,
+                fontSize: 25,
                 color: Color(0xff909090),
                 fontWeight: FontWeight.bold,
               ),
