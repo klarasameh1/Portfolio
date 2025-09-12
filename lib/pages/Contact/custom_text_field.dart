@@ -18,6 +18,12 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       maxLines: isMultiline ? 5 : 1,
       style: const TextStyle(color: Colors.white),
+      validator: (value) {
+        if (value == null || value.trim().isEmpty) {
+          return "Please enter your $label";
+        }
+        return null;
+      },
       decoration: InputDecoration(
         labelText: label,
         labelStyle: const TextStyle(color: Colors.white70),
@@ -33,3 +39,6 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
+//service_z84eupc
+//template_45zn1jh
+//1A-rHCP8T9KGhuFo9
