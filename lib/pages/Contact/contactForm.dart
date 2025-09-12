@@ -46,11 +46,42 @@ class ContactForm extends StatelessWidget {
 
     if (response.statusCode == 200) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("✅ Message sent successfully!")),
+        SnackBar(
+          content: Row(
+            children: const [
+              Icon(Icons.check_circle, color: Colors.white),
+              SizedBox(width: 10),
+              Expanded(child: Text(" Message sent successfully! Thanks for Your Contact" ,style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),)),
+            ],
+          ),
+          backgroundColor: const Color(0xff690B22), // portfolio theme color
+          behavior: SnackBarBehavior.floating, // floats above the screen
+          margin: const EdgeInsets.all(16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          duration: const Duration(seconds: 3),
+        ),
       );
-    } else {
+    }
+    else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("❌ Failed to send: ${response.body}")),
+        SnackBar(
+          content: Row(
+            children: const [
+              Icon(Icons.error, color: Colors.white),
+              SizedBox(width: 10),
+              Expanded(child: Text("❌ Failed to send. Please try again." , style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),)),
+            ],
+          ),
+          backgroundColor: Color(0xff690B22),
+          behavior: SnackBarBehavior.floating,
+          margin: const EdgeInsets.all(16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          duration: const Duration(seconds: 3),
+        ),
       );
     }
   }
@@ -64,7 +95,7 @@ class ContactForm extends StatelessWidget {
           SizedBox(height: 10),
           CustomTextField(label: "name", controller: nameController),
           SizedBox(height: 10),
-          CustomTextField(label: "Email", controller: emailController),
+          CustomTextField(label: "Email", controller: emailController , isEmail: true,),
           SizedBox(height: 10),
           CustomTextField(
             label: "Message",

@@ -4,12 +4,14 @@ class CustomTextField extends StatelessWidget {
   final String label;
   final TextEditingController controller;
   final bool isMultiline;
+  final bool isEmail;
 
   const CustomTextField({
     super.key,
     required this.label,
     required this.controller,
     this.isMultiline = false,
+    this.isEmail = false,
   });
 
   @override
@@ -22,6 +24,15 @@ class CustomTextField extends StatelessWidget {
         if (value == null || value.trim().isEmpty) {
           return "Please enter your $label";
         }
+
+        // Email validation
+        if (isEmail) {
+          final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
+          if (!emailRegex.hasMatch(value)) {
+            return "Please enter a valid email address";
+          }
+        }
+
         return null;
       },
       decoration: InputDecoration(
@@ -39,6 +50,3 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
-//service_z84eupc
-//template_45zn1jh
-//1A-rHCP8T9KGhuFo9
