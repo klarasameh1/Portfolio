@@ -64,32 +64,49 @@ class SkillsPage extends StatelessWidget {
       children: [
         Flexible(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 400),
+            constraints: const BoxConstraints(maxWidth: 600),
             child: Wrap(
-              spacing: 30,
+              spacing: 15,
               runSpacing: 15,
               children: [
                 for (var skill in skills)
-                  Chip(
-                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-                    backgroundColor: Colors.transparent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      side: BorderSide(color: Color(0xff690B22), width: 2),
-                    ),
-                    label: Text(
-                      skill["title"]!,
-                      style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500 ),
-                    ),
-                    avatar: Image.asset(
-                      skill["logo"]!,
-                      width: 32,
-                      height: 32,
+                  SizedBox(
+                    width: 150, // fixed width for all chips
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: const Color(0xff690B22),
+                          width: 2,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center, // centers content
+                        children: [
+                          Image.asset(
+                            skill["logo"]!,
+                            width: 28,
+                            height: 28,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              skill["title"]!,
+                              textAlign: TextAlign.center, // keeps text centered
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
               ],
-            )
-
+            ),
           ),
         ),
       ],
