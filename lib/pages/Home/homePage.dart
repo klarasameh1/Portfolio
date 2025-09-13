@@ -16,10 +16,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-  final scaffoldKey = GlobalKey<ScaffoldState>() ;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
-  final List<GlobalKey> navbarKeys = List.generate(5, (index)=> GlobalKey() );
+  final List<GlobalKey> navbarKeys = List.generate(5, (index) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
@@ -27,22 +26,26 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       key: scaffoldKey,
-      appBar:  PreferredSize(
-        preferredSize: Size.fromHeight(60),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60),
         child: screenWidth > 800
-            ? DesktopAppBar(onNavItemTapped: (int navIndex){scrollTo(navIndex);},)
+            ? DesktopAppBar(
+          onNavItemTapped: (int navIndex) {
+            scrollTo(navIndex);
+          },
+        )
             : MobileAppBar(
-              onMenuTap: (){
-                scaffoldKey.currentState?.openEndDrawer();
-              },
-            )
+          onMenuTap: () {
+            scaffoldKey.currentState?.openEndDrawer();
+          },
+        ),
       ),
-      endDrawer: MobileDrawer(onNavItemTapped: (int navIndex){
-        scaffoldKey.currentState?.closeEndDrawer();
-        scrollTo(navIndex);
+      endDrawer: MobileDrawer(
+        onNavItemTapped: (int navIndex) {
+          scaffoldKey.currentState?.closeEndDrawer();
+          scrollTo(navIndex);
         },
       ),
-
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -58,56 +61,39 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(30),
           child: SingleChildScrollView(
             controller: scrollController,
-            scrollDirection: Axis.vertical,
             child: Column(
               children: [
-                SizedBox(key: navbarKeys.first,),
-                SizedBox(width: 40),
+                SizedBox(key: navbarKeys.first),
+                const SizedBox(width: 40),
                 // Responsive layout
                 screenWidth > 800
                     ? Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Expanded(child: AboutMeContent()),
-                    SizedBox(width: 40),
-                    SizedBox(
-                      width: 500,
-                      height: 500,
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundImage: AssetImage('assets/images/ME.PNG'),
-                        backgroundColor: Color(0xff690B22),
-                      ),
-                    ),
+                  children: [
+                    const Expanded(child: AboutMeContent()),
+                    const SizedBox(width: 40),
+                    _buildProfilePicture(400),
                   ],
                 )
                     : Column(
                   children: [
-                    SizedBox(
-                      width: 300,
-                      height: 300,
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundImage: AssetImage('assets/images/ME.PNG'),
-                        backgroundColor: Color(0xff690B22),
-                      ),
-                    ),
+                    _buildProfilePicture(300),
                     const SizedBox(height: 30),
                     const AboutMeContent(),
                   ],
                 ),
 
                 const SizedBox(height: 100),
-                AboutPage(key: navbarKeys[1],),
+                AboutPage(key: navbarKeys[1]),
 
                 const SizedBox(height: 100),
-                SkillsPage(key: navbarKeys[2],),
+                SkillsPage(key: navbarKeys[2]),
 
                 const SizedBox(height: 100),
-                ProjectsPage(key: navbarKeys[3],),
+                ProjectsPage(key: navbarKeys[3]),
 
                 const SizedBox(height: 100),
-                ContactPage(key: navbarKeys[4],),
+                ContactPage(key: navbarKeys[4]),
               ],
             ),
           ),
@@ -115,12 +101,28 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-  void scrollTo(int navIndex){
-    final key = navbarKeys[navIndex] ;
+
+  /// Helper widget for profile picture with shadow
+  Widget _buildProfilePicture(double size) {
+    return Container(
+      width: size,
+      height: size,
+      decoration:  BoxDecoration(
+        shape: BoxShape.circle,
+      ),
+      child: const CircleAvatar(
+        backgroundImage: AssetImage('assets/images/ME.PNG'),
+        backgroundColor: Color(0xff690B22),
+      ),
+    );
+  }
+
+  void scrollTo(int navIndex) {
+    final key = navbarKeys[navIndex];
     Scrollable.ensureVisible(
-        key.currentContext!,
-        duration: const Duration(milliseconds: 500),
-      curve: Curves.easeInOut
+      key.currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }
