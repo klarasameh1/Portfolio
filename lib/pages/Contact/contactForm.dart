@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/widgets/bordered_flat_button.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 import 'custom_text_field.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:flutter/material.dart';
+
 
 class ContactForm extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/widgets/contacts_icons_row.dart';
 import '../../widgets/rectangleBox.dart';
 import 'contactForm.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({super.key});
