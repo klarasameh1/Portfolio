@@ -75,7 +75,7 @@ class SkillsPage extends StatelessWidget {
                     backgroundColor: Colors.transparent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
-                      side: BorderSide(color: Colors.white70),
+                      side: BorderSide(color: Color(0xff690B22), width: 2),
                     ),
                     label: Text(
                       skill["title"]!,
