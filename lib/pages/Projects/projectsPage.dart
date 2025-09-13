@@ -25,7 +25,7 @@ class ProjectsPage extends StatelessWidget {
       "description": "Compilation of everything i learned through my simple flutter journey",
       "tech": "Flutter \"web\", Provider",
       "image": "assets/projectsImages/portfolio.png",
-      "link": "https://github.com/klarasameh1/ShoppingApp-SprintsUp"
+      "link": "https://github.com/klarasameh1/Portfolio"
     },
   ];
 
