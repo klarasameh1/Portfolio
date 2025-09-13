@@ -20,7 +20,7 @@ class _ContactPageState extends State<ContactPage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Center(child: RectangleBox(content: "Let's Connect")),
-        const SizedBox(height: 40),
+        const SizedBox(height: 50),
         Center(child: ContactsIconsRow()),
         const SizedBox(height: 20),
         Text(

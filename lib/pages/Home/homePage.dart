@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                       width: 300,
                       height: 300,
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 30),
                     AboutMeContent(),
                   ],
                 ),

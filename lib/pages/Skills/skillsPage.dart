@@ -24,7 +24,7 @@ class SkillsPage extends StatelessWidget {
     return Column(
       children: [
         Center(child: RectangleBox(content: "Skills")),
-        const SizedBox(height: 40),
+        const SizedBox(height: 50),
 
         // ===== Working with =====
         Text(
@@ -64,7 +64,7 @@ class SkillsPage extends StatelessWidget {
       children: [
         Flexible(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 500),
+            constraints: const BoxConstraints(maxWidth: 400),
             child: Wrap(
               spacing: 30,
               runSpacing: 15,

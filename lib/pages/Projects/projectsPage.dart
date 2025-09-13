@@ -34,7 +34,7 @@ class ProjectsPage extends StatelessWidget {
     return Column(
       children: [
         Center(child: RectangleBox(content: "Projects")),
-        const SizedBox(height: 30),
+        const SizedBox(height: 50),
         Wrap(
           spacing: 20,
           runSpacing: 20,

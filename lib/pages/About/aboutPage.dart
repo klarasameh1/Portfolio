@@ -15,7 +15,7 @@ class AboutPage extends StatelessWidget {
           children: [
             // Section header
             Center(child: RectangleBox(content: "About Me")),
-            const SizedBox(height: 40),
+            const SizedBox(height: 50),
 
             // Typing effect for main title
             DefaultTextStyle(
