@@ -21,10 +21,14 @@ class BorderedFlatButton extends StatelessWidget {
       width: width,
       child: ElevatedButton(
           onPressed: onTap,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.white,
-          padding: EdgeInsets.all(10),
-          foregroundColor: Color(0xff690B22) ,
+        style: ButtonStyle(
+          backgroundColor: WidgetStateProperty.resolveWith<Color>((states){
+            if (states.contains(WidgetState.hovered)) {
+              return Color(0xff690B22);
+            }
+            return Colors.white ;
+          },
+          ),
         ),
           child: Text(
             title,

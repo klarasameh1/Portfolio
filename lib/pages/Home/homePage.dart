@@ -70,22 +70,30 @@ class _HomePageState extends State<HomePage> {
                   children: const [
                     Expanded(child: AboutMeContent()),
                     SizedBox(width: 40),
-                    Image(
-                      image: AssetImage('assets/images/ME.PNG'),
+                    SizedBox(
                       width: 500,
-                      height: 400,
+                      height: 500,
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('assets/images/ME.PNG'),
+                        backgroundColor: Color(0xff690B22),
+                      ),
                     ),
                   ],
                 )
                     : Column(
-                  children: const [
-                    Image(
-                      image: AssetImage('assets/images/ME.PNG'),
+                  children: [
+                    SizedBox(
                       width: 300,
                       height: 300,
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('assets/images/ME.PNG'),
+                        backgroundColor: Color(0xff690B22),
+                      ),
                     ),
-                    SizedBox(height: 30),
-                    AboutMeContent(),
+                    const SizedBox(height: 30),
+                    const AboutMeContent(),
                   ],
                 ),
 

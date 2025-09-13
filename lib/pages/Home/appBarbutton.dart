@@ -12,15 +12,30 @@ class AppBarButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: onTap,
-        child:Text(
-          label,
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold
-          ),
-        )
+      onPressed: onTap,
+      style: ButtonStyle(
+        foregroundColor: WidgetStateProperty.resolveWith<Color>(
+              (states) {
+            if (states.contains(WidgetState.hovered)) {
+              return Color(0xff690B22);
+            }
+            return Colors.white;
+          },
+        ),
+        backgroundColor: WidgetStateProperty.resolveWith<Color>((states){
+            if (states.contains(WidgetState.hovered)) {
+              return Colors.black12;
+            }
+            return Colors.transparent ;
+          },
+        ),
+      ),
+      child: Text(
+        label,
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }
-
