@@ -5,13 +5,22 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 
-class ContactForm extends StatelessWidget {
-  final _formKey = GlobalKey<FormState>();
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController messageController = TextEditingController();
+class ContactForm extends StatefulWidget {
 
-  ContactForm({super.key});
+  const ContactForm({super.key});
+
+  @override
+  State<ContactForm> createState() => _ContactFormState();
+}
+
+class _ContactFormState extends State<ContactForm> {
+  final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController nameController = TextEditingController();
+
+  final TextEditingController emailController = TextEditingController();
+
+  final TextEditingController messageController = TextEditingController();
 
   Future<void> sendEmail(
     BuildContext context,
@@ -42,82 +51,78 @@ class ContactForm extends StatelessWidget {
       }),
     );
 
-    if (response.statusCode == 200) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Row(
-            children: const [
-              Icon(Icons.check_circle, color: Colors.white),
-              SizedBox(width: 10),
-              Expanded(child: Text(" Message sent successfully! Thanks for Your Contact" ,style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),)),
-            ],
+    final snackBar = SnackBar(
+      content: Row(
+        children: [
+          Icon(
+            response.statusCode == 200 ? Icons.check_circle : Icons.error,
+            color: Colors.white,
           ),
-          backgroundColor: const Color(0xff690B22), // portfolio theme color
-          behavior: SnackBarBehavior.floating, // floats above the screen
-          margin: const EdgeInsets.all(16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              response.statusCode == 200
+                  ? "Message sent successfully! Thanks for your contact."
+                  : "❌ Failed to send. Please try again.",
+              style: const TextStyle(
+                  color: Colors.white, fontWeight: FontWeight.bold),
+            ),
           ),
-          duration: const Duration(seconds: 3),
-        ),
-      );
-    }
-    else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Row(
-            children: const [
-              Icon(Icons.error, color: Colors.white),
-              SizedBox(width: 10),
-              Expanded(child: Text("❌ Failed to send. Please try again." , style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),)),
-            ],
-          ),
-          backgroundColor: Color(0xff690B22),
-          behavior: SnackBarBehavior.floating,
-          margin: const EdgeInsets.all(16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          duration: const Duration(seconds: 3),
-        ),
-      );
-    }
+        ],
+      ),
+      backgroundColor: const Color(0xff690B22),
+      behavior: SnackBarBehavior.floating,
+      margin: const EdgeInsets.all(16),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      duration: const Duration(seconds: 3),
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          SizedBox(height: 10),
-          CustomTextField(label: "name", controller: nameController),
-          SizedBox(height: 10),
-          CustomTextField(label: "Email", controller: emailController , isEmail: true,),
-          SizedBox(height: 10),
-          CustomTextField(
-            label: "Message",
-            controller: messageController,
-            isMultiline: true,
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      behavior: HitTestBehavior.opaque,
+      child: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              const SizedBox(height: 10),
+              CustomTextField(label: "Name", controller: nameController),
+              const SizedBox(height: 10),
+              CustomTextField(
+                label: "Email",
+                controller: emailController,
+                isEmail: true,
+              ),
+              const SizedBox(height: 10),
+              CustomTextField(
+                label: "Message",
+                controller: messageController,
+                isMultiline: true,
+              ),
+              const SizedBox(height: 20),
+              BorderedFlatButton(
+                title: 'Send',
+                onTap: () {
+                  if (_formKey.currentState!.validate()) {
+                    sendEmail(
+                      context,
+                      nameController.text,
+                      emailController.text,
+                      messageController.text,
+                    );
+                  }
+                },
+                width: 100,
+                height: 40,
+              ),
+            ],
           ),
-          SizedBox(height: 10),
-
-          BorderedFlatButton(
-            title: 'Send',
-            onTap: () {
-              if (_formKey.currentState!.validate()) {
-                sendEmail(
-                  context,
-                  nameController.text,
-                  emailController.text,
-                  messageController.text,
-                );
-              }
-            },
-            width: 100,
-            height: 40,
-          ),
-        ],
+        ),
       ),
     );
   }

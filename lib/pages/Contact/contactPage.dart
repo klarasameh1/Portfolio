@@ -44,6 +44,7 @@ class _ContactPageState extends State<ContactPage> {
             child: ContactForm(),
           )
         ),
+        const SizedBox(height: 30),
       ],
     );
   }
